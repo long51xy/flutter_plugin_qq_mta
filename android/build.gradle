@@ -1,0 +1,40 @@
+group 'com.zm.flutter.plugin.qq_mta'
+version '1.0'
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.0'
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 16
+    }
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+}
+
+dependencies {
+    //MTA主包
+    implementation 'com.qq.mta:mta:3.4.2'
+    //MID基础包
+    implementation 'com.tencent.mid:mid:3.73-release'
+}
