@@ -17,7 +17,7 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
 
-    _qqMta.init(debugEnabled: true);
+    _qqMta.init(debugEnabled: true, iosAppKey: "I82RGZ8IP2JL");
   }
 
   @override
