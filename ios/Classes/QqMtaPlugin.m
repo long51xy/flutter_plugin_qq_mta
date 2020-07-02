@@ -16,17 +16,20 @@ static NSString *CHANNEL_NAME = @"qq_mta";
 
 - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
   if ([@"init" isEqualToString:call.method]) {
-    NSString *iosAppKey = call.arguments[@"iosAppKey"];
-    BOOL debugEnabled = call.arguments[@"debugEnabled"];
-
+    NSDictionary *arguments=  [call arguments];
+    NSString *iosAppKey = arguments[@"iosAppKey"];
+    BOOL debugEnabled = [[arguments objectForKey:@"debugEnabled"] boolValue];
     [[MTAConfig getInstance] setDebugEnable:debugEnabled];
     [MTA startWithAppkey:iosAppKey];
   } else if ([@"trackEvent" isEqualToString:call.method]) {
     NSDictionary *arguments=  [call arguments];
-    NSString *eventName = arguments["eventName"];
-    NSString *parameters = arguments["parameters"];
-    NSData *parametersData = [parameters dataUsingEncoding:NSUTF8StringEncoding];
-    NSDictionary *parametersDic =  [NSJSONSerialization JSONObjectWithData:parametersData options:NSJSONReadingMutableContainers error:nil];
+    NSString *eventName = arguments[@"eventName"];
+    NSDictionary *parameters = arguments[@"parameters"];
+    if (parameters != nil) {
+        [MTA trackCustomKeyValueEvent:eventName props:parameters];
+    } else {
+        [MTA trackCustomKeyValueEvent:eventName props:nil];
+    }
   }
 }
 @end
