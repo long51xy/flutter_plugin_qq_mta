@@ -10,10 +10,8 @@ zhaolong<zhaoyuen123@126.com>
 
 
 ```yaml
-  qq_mta: 0.0.1
+  qq_mta: 0.1.1
 ```
-
-<br/>
 
 ## Step 2: Add permissions (Android)
 
@@ -44,6 +42,8 @@ android {
     }
 }
 ```
+## Step 3: IOS
+pod install
 
 ## example
 
@@ -66,7 +66,8 @@ android {
   `https://blog.csdn.net/shanshan_1117/article/details/89952128`
   安卓9.0 Cleartext HTTP traffic to XXX not permitted问题
   `https://www.jianshu.com/p/fd0b0fd0e34c`
-  
+  上架AppStore 上传IDFA注意事项 https://mta.qq.com/docs/iOS_idfa.html
+
 ## doc
   官方文档:
     `https://mta.qq.com/docs/`

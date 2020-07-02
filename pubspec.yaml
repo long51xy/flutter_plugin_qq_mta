@@ -1,12 +1,12 @@
 name: qq_mta
 description: 腾讯统计mta flutter sdk
-version: 0.0.1
+version: 0.1.1
 author: zhaolong <zhaoyuen123@126.com>
 homepage: https://github.com/long51xy/flutter_plugin_qq_mta
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
-  flutter: ">=1.10.0"
+  flutter: ">=1.17.0"
 
 dependencies:
   flutter:
