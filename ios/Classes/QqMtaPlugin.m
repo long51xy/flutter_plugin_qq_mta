@@ -21,6 +21,12 @@ static NSString *CHANNEL_NAME = @"qq_mta";
 
     [[MTAConfig getInstance] setDebugEnable:debugEnabled];
     [MTA startWithAppkey:iosAppKey];
+  } else if ([@"trackEvent" isEqualToString:call.method]) {
+    NSDictionary *arguments=  [call arguments];
+    NSString *eventName = arguments["eventName"];
+    NSString *parameters = arguments["parameters"];
+    NSData *parametersData = [parameters dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *parametersDic =  [NSJSONSerialization JSONObjectWithData:parametersData options:NSJSONReadingMutableContainers error:nil];
   }
 }
 @end
