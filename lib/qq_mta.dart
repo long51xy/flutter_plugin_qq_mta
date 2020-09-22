@@ -1,8 +1,7 @@
 import 'package:flutter/services.dart';
 
 class QqMta {
-  static const MethodChannel _channel =
-      const MethodChannel('qq_mta');
+  static const MethodChannel _channel = const MethodChannel('qq_mta');
 
   void init({bool debugEnabled, String iosAppKey, String iosAppChannel}) async {
     Map<String, dynamic> options = {};
@@ -25,5 +24,10 @@ class QqMta {
       options["parameters"] = parameters;
     }
     await _channel.invokeMethod('trackEvent', options);
+  }
+
+  Future<bool> isVPNOn() async {
+    final bool result = await _channel.invokeMethod('isVPNOn');
+    return result;
   }
 }

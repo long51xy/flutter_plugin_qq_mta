@@ -34,16 +34,24 @@ class _MyAppState extends State<MyApp> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 RaisedButton(
-                  onPressed: (){
+                  onPressed: () {
                     _qqMta.trackEvent("test");
                   },
                   child: Text("trackEvent test"),
                 ),
                 RaisedButton(
-                  onPressed: (){
-                    _qqMta.trackEvent("test2", parameters:{'a':'a', 'b':'b'});
+                  onPressed: () {
+                    _qqMta
+                        .trackEvent("test2", parameters: {'a': 'a', 'b': 'b'});
                   },
                   child: Text("trackEvent 带参数"),
+                ),
+                RaisedButton(
+                  onPressed: () async {
+                    bool isVPNOn = await _qqMta.isVPNOn();
+                    print(isVPNOn);
+                  },
+                  child: Text("isVPNOn"),
                 ),
               ],
             ),

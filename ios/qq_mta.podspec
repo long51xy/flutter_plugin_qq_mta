@@ -4,10 +4,10 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'qq_mta'
-  s.version          = '0.0.1'
-  s.summary          = 'A new flutter plugin project.'
+  s.version          = '0.0.2'
+  s.summary          = 'flutter qq移动统计'
   s.description      = <<-DESC
-A new flutter plugin project.
+flutter qq移动统计.
                        DESC
   s.homepage         = 'https://github.com/long51xy/flutter_plugin_qq_mta'
   s.license          = { :file => '../LICENSE' }
@@ -15,7 +15,7 @@ A new flutter plugin project.
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
-  s.dependency 'QQ_MTA', '2.5.4'
+  s.dependency 'QQ_MTA', '2.7.0'
   s.platform = :ios, '8.0'
 
   # Flutter.framework does not contain a i386 slice. Only x86_64 simulators are supported.
