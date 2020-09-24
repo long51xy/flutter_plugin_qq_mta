@@ -1,6 +1,9 @@
 #import "QqMtaPlugin.h"
 #import "MTA.h"
 #import "MTAConfig.h"
+#include <ifaddrs.h>
+#import <UIKit/UIKit.h>
+#import <CoreTelephony/CTTelephonyNetworkInfo.h>
 
 static NSString *CHANNEL_NAME = @"qq_mta";
 @implementation QqMtaPlugin
@@ -32,7 +35,7 @@ static NSString *CHANNEL_NAME = @"qq_mta";
     }
   } else if ([@"isVPNOn" isEqualToString:call.method]) {
     BOOL isVPNOn = [self isVPNOn];
-    result(isVPNOn);
+    result(FlutterMethodNotImplemented);
   }
 }
 
