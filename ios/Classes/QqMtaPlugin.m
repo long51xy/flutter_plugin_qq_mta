@@ -35,7 +35,7 @@ static NSString *CHANNEL_NAME = @"qq_mta";
     }
   } else if ([@"isVPNOn" isEqualToString:call.method]) {
     BOOL isVPNOn = [self isVPNOn];
-    result(FlutterMethodNotImplemented);
+    result(@(isVPNOn));
   }
 }
 
